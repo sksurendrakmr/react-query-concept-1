@@ -4,18 +4,33 @@ import { Typography } from "@mui/material";
 const TraditionSuperheros = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:4000/superheros").then((res) => {
-      setData(res.data);
-      setIsLoading(false);
-    });
+    axios
+      .get("http://localhost:4000/superheros")
+      .then((res) => {
+        setData(res.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setIsLoading(false);
+      });
   });
 
   if (isLoading) {
     return (
       <Typography variant='h2' align='center'>
         Loading...
+      </Typography>
+    );
+  }
+
+  if (error) {
+    return (
+      <Typography align='center' variant='h6'>
+        {error}
       </Typography>
     );
   }

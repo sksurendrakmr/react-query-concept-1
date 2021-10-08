@@ -11,16 +11,34 @@ import { Typography } from "@mui/material";
  * With react query, we don't have to manage react state based on the effect.
  */
 
+/**
+ * 4- Handle query error
+ * isError => a flag
+ * error => error thrown from the request
+ *
+ * react query automatically retries if the API request failed
+ */
 const fetchSuperheros = () => {
-  return axios.get("http://localhost:4000/superheros");
+  return axios.get("http://localhost:4000/superhero");
 };
 const ReactQuerySuperheros = () => {
-  const { isLoading, data } = useQuery("super-heros", fetchSuperheros);
+  const { isLoading, data, isError, error } = useQuery(
+    "super-heros",
+    fetchSuperheros
+  );
 
   if (isLoading) {
     return (
       <Typography variant='h2' align='center'>
         Loading...
+      </Typography>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Typography align='center' variant='h6'>
+        {error.message}
       </Typography>
     );
   }
