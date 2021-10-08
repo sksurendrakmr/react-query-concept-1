@@ -1,0 +1,50 @@
+React Query
+What?
+A library for fetching data in a react application.
+
+Why we need a library for data feteching?
+1) Since React is a UI library, there is no specific pattern for data fetching.
+2) Typically, we make use of useEffect hook for data fetching and useState hook
+   to maintain component state like loading, error or resulting data.
+3) If the data is needed throughout the app, we tend to use state management libraries.
+4) Most of the state management libraries are good for working with client state.
+    Ex.'theme' for the application / whether a modal is open.
+5) State management libraries are not great for working with asynchronous or server state.
+   This is because server state is very different to client state.
+
+Client vs server state
+
+Client state
+Persisted in our app memory and accessing or updating it is synchronous.
+
+Server state
+Persisted remotely and requires asynchronous APIs for fetching or updating.
+
+Server state has shared ownership i.e data can be updated by someone else without our
+knowledge which can quickly lead to UI data that may not be in sync with the remote
+data.
+
+More challenging when we have to deal with caching, deduping multiple requests for the same data,
+updating stale data in the backgorund. performance optimizations etc.
+
+This challennged can be solved with react query library.
+
+Features we will covered:-
+Basic queries ✔
+Poll data
+RQ dev tools
+create reusable query hooks
+query by ID
+parallel queries
+Dynamic queries
+Dependent queries
+Infinite and paginated queries
+
+We also need to keep in mind that the server state is not just fetching,
+it also needs updating.
+
+For that :-
+Update data using mutations
+Invalidate queries when mutation is successful
+OPtimistic update
+Axios Interceptor with react query

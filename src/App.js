@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./component/Header";
+import Home from "./component/Home";
+import TraditionSuperheros from "./component/TraditionSuperheros";
+import ReactQuerySuperheros from "./component/ReactQuerySuperheros";
 function App() {
+  // const path = window.location.pathname;
+  // const activeIndex = () => {
+  //   const found = routes.find(({ link }) => link === path);
+  //   found && setNavigatTo(found.activeIndex);
+  // };
+
+  // useEffect(() => {
+  //   activeIndex();
+  // }, [path]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/tradition' component={TraditionSuperheros} />
+          <Route path='/rq' component={ReactQuerySuperheros} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
