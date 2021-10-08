@@ -22,10 +22,13 @@ const fetchSuperheros = () => {
   return axios.get("http://localhost:4000/superheros");
 };
 const ReactQuerySuperheros = () => {
-  const { isLoading, data, isError, error } = useQuery(
+  const { isLoading, data, isError, error, isFetching } = useQuery(
     "super-heros",
-    fetchSuperheros
+    fetchSuperheros,
+    { cacheTime: 5000 }
   );
+
+  console.log({ isLoading, isFetching });
 
   if (isLoading) {
     return (
