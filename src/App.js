@@ -1,4 +1,6 @@
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+
 import Header from "./component/Header";
 import Home from "./component/Home";
 import TraditionSuperheros from "./component/TraditionSuperheros";
@@ -14,16 +16,20 @@ function App() {
   //   activeIndex();
   // }, [path]);
 
+  const queryClient = new QueryClient();
+
   return (
     <>
-      <Router>
-        <Header />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/tradition' component={TraditionSuperheros} />
-          <Route path='/rq' component={ReactQuerySuperheros} />
-        </Switch>
-      </Router>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/tradition' component={TraditionSuperheros} />
+            <Route path='/rq' component={ReactQuerySuperheros} />
+          </Switch>
+        </Router>
+      </QueryClientProvider>
     </>
   );
 }

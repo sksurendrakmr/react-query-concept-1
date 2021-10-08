@@ -48,3 +48,13 @@ Update data using mutations
 Invalidate queries when mutation is successful
 OPtimistic update
 Axios Interceptor with react query
+
+Lecture - 3_Fetching Data with useQuery
+ steps
+ 1) install the package
+ 2) we need to add react query to our application
+      At the top of our component tree, we need to add reactQueryProvider and provide the
+      client to the provider. 
+      By doing so,we will have access to every hook and method that react query provides.
+
+      
