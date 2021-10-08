@@ -104,3 +104,24 @@ Since, react query set the default value of 5 minutes for the query cache.
 But if we want / needs to change it, pass in a third argument to useQuery.
 Third argument is an object where we can configure multiple properties of which
 cachetime is one of them.
+
+Summary
+One of the uses of caching the query results is being able to reuse the results
+for susbsequent queries. That will allow the user to view the previously fetched data 
+without having to view the loading indicator every single time. Thus leading to a slightly
+better user experience.
+
+
+Lecture - 7_Stale Time 
+
+Another use of query cache is to reduce the number of network requests for data
+that doesn't necessarily change too often.
+
+For e.g. suppose our list of superheros doesn't change more often and its okay
+if user sees stale data for a while.
+In such cases, we can use the cached query results without having to refetch in the background.
+
+To acheieve that behavior we configure another property called stale time.
+
+
+Default stale time is 0 sec.

@@ -25,7 +25,7 @@ const ReactQuerySuperheros = () => {
   const { isLoading, data, isError, error, isFetching } = useQuery(
     "super-heros",
     fetchSuperheros,
-    { cacheTime: 5000 }
+    { staleTime: 30000 }
   );
 
   console.log({ isLoading, isFetching });

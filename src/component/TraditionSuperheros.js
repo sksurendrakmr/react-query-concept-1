@@ -17,7 +17,7 @@ const TraditionSuperheros = () => {
         setError(err.message);
         setIsLoading(false);
       });
-  });
+  }, []);
 
   if (isLoading) {
     return (
