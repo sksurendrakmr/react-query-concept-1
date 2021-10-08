@@ -19,7 +19,7 @@ import { Typography } from "@mui/material";
  * react query automatically retries if the API request failed
  */
 const fetchSuperheros = () => {
-  return axios.get("http://localhost:4000/superhero");
+  return axios.get("http://localhost:4000/superheros");
 };
 const ReactQuerySuperheros = () => {
   const { isLoading, data, isError, error } = useQuery(

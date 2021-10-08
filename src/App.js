@@ -1,6 +1,6 @@
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "react-query";
-
+import { ReactQueryDevtools } from "react-query/devtools";
 import Header from "./component/Header";
 import Home from "./component/Home";
 import TraditionSuperheros from "./component/TraditionSuperheros";
@@ -29,6 +29,7 @@ function App() {
             <Route path='/rq' component={ReactQuerySuperheros} />
           </Switch>
         </Router>
+        <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
       </QueryClientProvider>
     </>
   );
