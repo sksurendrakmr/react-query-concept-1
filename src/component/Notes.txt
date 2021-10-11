@@ -160,3 +160,25 @@ This is perfectly valid default value which ensures the UI is upto date with the
 data when the users come back to application.
 
 other values that we can set on refetchOnWindowFocus => false, 'always'(refetch irrespective of whether the query data is stale or not)
+
+Lecture - 9_Polling
+Refers to fetching data at regular interval.
+E.g. If we have a component that shows the real-time price of different stocks, we
+might want to fetch data every second to update the UI.
+This ensures the UI will always be in sync with the remote data irrespective of
+configuration like refetchOnMount and refetchOnWindowFocus which is dependent on user interaction.
+
+To poll data in react query, we can make use another configuration called
+refetchInterval.
+
+By default, it is set to false.
+However we can set it to a number in miliseconds which will result in a continuous
+refetch of the query at that interval. 
+
+E.g if we set it to 3000, the query will automatically refetch every two second.
+
+The polling or automatic refetching is paused if the window loses focus.
+If we do want backgorund refetching at regular intervals, we can specify
+another configuration called refetchIntervalInBackground and set it to true.
+
+This will continue to pull the data even if the browser is not on focussed.

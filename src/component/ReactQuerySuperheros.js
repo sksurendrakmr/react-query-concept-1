@@ -25,7 +25,7 @@ const ReactQuerySuperheros = () => {
   const { isLoading, data, isError, error, isFetching } = useQuery(
     "super-heros",
     fetchSuperheros,
-    { refetchOnMount: false, refetchOnWindowFocus: true }
+    { refetchInterval: 2000, refetchIntervalInBackground: 1000 }
   );
 
   console.log({ isLoading, isFetching });
