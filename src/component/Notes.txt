@@ -125,3 +125,24 @@ To acheieve that behavior we configure another property called stale time.
 
 
 Default stale time is 0 sec.
+
+
+Lecture - 8_Refetch Defaults
+Recap : - React query have default cache duration of 5 minutes and default
+stale time of zero seconds.
+
+In this lecture, we will learn two more configuration related to refetching 
+for which react query provides a default value.
+
+1) refetchForMount -> by default it is set to true.
+   If it is set to true then the query will refetch on mount if the data 
+   is stale.
+
+   If we set it to false, the query will not refetch on mount.
+
+   we can also set it to a string 'always', which will refetch whether the data is stale or not.
+
+   
+
+
+
