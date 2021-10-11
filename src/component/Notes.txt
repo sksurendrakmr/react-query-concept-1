@@ -142,7 +142,21 @@ for which react query provides a default value.
 
    we can also set it to a string 'always', which will refetch whether the data is stale or not.
 
-   
+2) refetchOnWindowFocus -> slightly more important than refetchOnMount.
 
+In traditional way of fetching data,If data in server side changes then it wouldn't 
+automatically update the data in client side until and unless we refresh the page(until componentDidMount not called)
 
+But with react query, data in client side automatically updates.
+Our UI will be in sync with the remote data.
+This is possible because of the refetchOnWindowFocus configuration.
 
+By default it is set to true.
+
+So any time, tab losses focus and gains focus again, a background refetch is 
+initiated. When the refetch completes, the UI is updated with the data retrieved.
+
+This is perfectly valid default value which ensures the UI is upto date with the remote 
+data when the users come back to application.
+
+other values that we can set on refetchOnWindowFocus => false, 'always'(refetch irrespective of whether the query data is stale or not)
