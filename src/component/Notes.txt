@@ -252,3 +252,25 @@ which we can specify in the useQuery hook.
 (data in our case is basically the response)
 
 Data tranformation also includes data filtering.
+
+Lecture_13 - Custom Query Hook 
+
+Summary
+UseQuery hook is used to fetch data.
+The first argument is a unique key, the second argument is a fetcher function and 
+the third argument is an object where we can specify options or configurations to tweek its 
+behaviour.
+The hook also returns a number of values which we can use to render the components.
+
+But for larger app, we want to reuse the data fetching logic.
+E.g. - The same query might be required in a different component.
+
+So we need a way to resuse the useQuery hook.
+So this lecture, we will learn how to create a custom hook that wraps around the
+useQuery hooks.
+
+Thus, that would allow us to call the custom hook from multiple components
+wihout having to duplicate the code.
+
+Steps 
+1) create a new file which will contain the custom query hook.

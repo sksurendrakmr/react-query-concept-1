@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { Button, Typography } from "@mui/material";
+import { useSuperHerosData } from "../hooks/useSuperHerosData";
 /**
  *  we use useQuery hook for all our data fetching needs.
  * useQuery hook requires atleast two arguments.
@@ -32,19 +33,8 @@ const ReactQuerySuperheros = () => {
     console.log("Perform side effect after encountering error", error);
   };
 
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-    "super-heros",
-    fetchSuperheros,
-    {
-      onSuccess: onSuccess,
-      onError: onError,
-      select: (data) => {
-        //What it does is change the destructured data to an array of superHero names.
-        const superHeroNames = data.data.map((hero) => hero.name);
-        return superHeroNames;
-      },
-    }
-  );
+  const { isLoading, data, isError, error, isFetching, refetch } =
+    useSuperHerosData(onSuccess, onError);
 
   if (isLoading || isFetching) {
     return (
