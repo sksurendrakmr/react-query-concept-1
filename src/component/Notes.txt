@@ -272,5 +272,13 @@ useQuery hooks.
 Thus, that would allow us to call the custom hook from multiple components
 wihout having to duplicate the code.
 
-Steps 
-1) create a new file which will contain the custom query hook.
+Lecture_14 - Query by Id 
+One scenarios that is pretty common with data fetching is quering by id.
+E.g - we have a list of items and on click of an item, we want the details
+of that individual items.
+
+Querying by Id setup (in our case)
+1) Create a new page that will eventually display the details about one single superhero.
+2) Configure the route to that page and add a link from the super heros list page to the super hero 
+   details page.
+3) Fetch a superhero by id and display the details in the UI.

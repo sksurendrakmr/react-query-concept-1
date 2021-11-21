@@ -1,8 +1,9 @@
 import React from "react";
-import { useQuery } from "react-query";
 import axios from "axios";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Grid } from "@mui/material";
 import { useSuperHerosData } from "../hooks/useSuperHerosData";
+
+import { Link } from "react-router-dom";
 /**
  *  we use useQuery hook for all our data fetching needs.
  * useQuery hook requires atleast two arguments.
@@ -57,13 +58,21 @@ const ReactQuerySuperheros = () => {
         React Query Superheros
       </Typography>
       <Button onClick={refetch}>Fetch Superheros</Button>
-      {data.map((heroName) => {
-        return (
-          <Typography key={heroName} variant='body1'>
-            {heroName}
-          </Typography>
-        );
-      })}
+      <Grid container direction='column'>
+        {data?.data.map((hero) => {
+          return (
+            <Grid item>
+              <Typography
+                key={hero.id}
+                variant='body1'
+                component={Link}
+                to={`/rq/${hero.id}`}>
+                {hero.id} - {hero.name}
+              </Typography>
+            </Grid>
+          );
+        })}
+      </Grid>
     </>
   );
 };

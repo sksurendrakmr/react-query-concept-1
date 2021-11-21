@@ -5,6 +5,7 @@ import Header from "./component/Header";
 import Home from "./component/Home";
 import TraditionSuperheros from "./component/TraditionSuperheros";
 import ReactQuerySuperheros from "./component/ReactQuerySuperheros";
+import { RQSuperHeroPage } from "./component/RQSuperHero.page";
 function App() {
   // const path = window.location.pathname;
   // const activeIndex = () => {
@@ -26,7 +27,8 @@ function App() {
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/tradition' component={TraditionSuperheros} />
-            <Route path='/rq' component={ReactQuerySuperheros} />
+            <Route exact path='/rq' component={ReactQuerySuperheros} />
+            <Route path='/rq/:heroId' component={RQSuperHeroPage} />
           </Switch>
         </Router>
         <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
