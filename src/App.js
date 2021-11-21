@@ -7,6 +7,7 @@ import TraditionSuperheros from "./component/TraditionSuperheros";
 import ReactQuerySuperheros from "./component/ReactQuerySuperheros";
 import { RQSuperHeroPage } from "./component/RQSuperHero.page";
 import { ParallelQueriesPage } from "./component/ParallelQueries.page";
+import { DynamicParallelPage } from "./component/DynamicParallel.page";
 function App() {
   // const path = window.location.pathname;
   // const activeIndex = () => {
@@ -30,6 +31,9 @@ function App() {
             <Route path='/tradition' component={TraditionSuperheros} />
             <Route exact path='/rq' component={ReactQuerySuperheros} />
             <Route exact path='/rq-parallel' component={ParallelQueriesPage} />
+            <Route exact path='/rq-dynamic-parallel'>
+              <DynamicParallelPage heroIds={[1, 3]} />
+            </Route>
             <Route path='/rq/:heroId' component={RQSuperHeroPage} />
           </Switch>
         </Router>

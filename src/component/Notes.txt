@@ -287,3 +287,5 @@ Querying by Id setup (in our case)
 Lecture_15 - Parallel queries
 Sometimes a single component needs to call multiple apis to fetch the neccessary data.
 With react query it is as simple as calling use query twice.
+
+Lecture_16 - Dynamic Parallel Queries
