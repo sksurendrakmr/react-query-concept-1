@@ -215,3 +215,28 @@ For this, there are two steps that we need to implement :-
 
    If we have refresh button (🔄), then it is recommanded to enable isFetching flag
    to display the Loading indicator.
+
+
+   Lecture-11 _ Success and Error callbacks
+   we will learn callbacks with useQuery.
+
+   When we are dealing with data fetching, sometimes we might want to perform 
+   a side effect when the query completes.
+   E.g. opening a model, navigating to different route or even displaying toast notification.
+
+   To cater these scenarios, react query let us specify success and error callbacks as configurations or options 
+   to the useQuery hook.
+
+   Steps to followed :-
+   1) we need to define two functions which will be called when the query succeeds or when it fails. 
+   2) To attach this functions (onSuccess and onError functions) to our superheros query all we have to do is
+      specify onSuccess and onError configurations.
+
+   Notes :-
+ ➡  React query automatically injects the data that has been fetched or the error that 
+     was encountered into these callbacks.
+ ➡ So we can specify data as parameter to onSuccess and error as parameter to onError.
+
+Summary
+Thus, react query allow us to do side effects based on the actual response for that 
+individual query.

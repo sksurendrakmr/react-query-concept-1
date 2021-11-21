@@ -22,10 +22,20 @@ const fetchSuperheros = () => {
   return axios.get("http://localhost:4000/superheros");
 };
 const ReactQuerySuperheros = () => {
+  const onSuccess = (data) => {
+    //this function will be called when the query successfully fetches data
+    console.log("Perform side effect after data fetching", data);
+  };
+
+  const onError = (error) => {
+    //this function get called when the query encounters an error while trying to fetch the data.
+    console.log("Perform side effect after encountering error", error);
+  };
+
   const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
     "super-heros",
     fetchSuperheros,
-    { enabled: false }
+    { onSuccess: onSuccess, onError: onError }
   );
 
   if (isLoading || isFetching) {
