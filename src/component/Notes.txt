@@ -182,3 +182,36 @@ If we do want backgorund refetching at regular intervals, we can specify
 another configuration called refetchIntervalInBackground and set it to true.
 
 This will continue to pull the data even if the browser is not on focussed.
+
+Lecture - 10_useQuery on click
+
+In prevoius lectures, we have learnt that request is fired as soon as the 
+component mounts or if we focus the window.
+
+However, depending on the requirement, we might have to fetch the data based
+on a user event and not when the component mounts.
+
+So, in this lecture we learn how to fetch data using useQuery but only onClick
+of a button. 
+
+For this, there are two steps that we need to implement :-
+1) Inform useQuery not to fire the get request when the component mounts.
+   We do that by passing in a configuration called enabled and setting it to false.
+   {
+      enabled:false
+   }
+   By doing this, we don't see data when component mount or if we focus the window. 
+   React query will track the data in the devtool but its data will be empty
+
+   So step 1 => Disable fetching on mount using the enabled flag.
+2) We fetch the data on click of a button.
+   useQuery provide/return a function called refetch to manually trigger the query.
+   We have to pass this refetch() in onClick handler.
+
+   Still the Query cache and stale time still play the same role.
+   on first request, isLoading will be true and we will see Loading spinner.
+   on susbsequent request, only isFetching flag will be true because of the 
+   background refetching that takes place.
+
+   If we have refresh button (🔄), then it is recommanded to enable isFetching flag
+   to display the Loading indicator.
