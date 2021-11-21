@@ -282,3 +282,8 @@ Querying by Id setup (in our case)
 2) Configure the route to that page and add a link from the super heros list page to the super hero 
    details page.
 3) Fetch a superhero by id and display the details in the UI.
+
+
+Lecture_15 - Parallel queries
+Sometimes a single component needs to call multiple apis to fetch the neccessary data.
+With react query it is as simple as calling use query twice.

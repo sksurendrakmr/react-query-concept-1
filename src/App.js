@@ -6,6 +6,7 @@ import Home from "./component/Home";
 import TraditionSuperheros from "./component/TraditionSuperheros";
 import ReactQuerySuperheros from "./component/ReactQuerySuperheros";
 import { RQSuperHeroPage } from "./component/RQSuperHero.page";
+import { ParallelQueriesPage } from "./component/ParallelQueries.page";
 function App() {
   // const path = window.location.pathname;
   // const activeIndex = () => {
@@ -28,6 +29,7 @@ function App() {
             <Route path='/' exact component={Home} />
             <Route path='/tradition' component={TraditionSuperheros} />
             <Route exact path='/rq' component={ReactQuerySuperheros} />
+            <Route exact path='/rq-parallel' component={ParallelQueriesPage} />
             <Route path='/rq/:heroId' component={RQSuperHeroPage} />
           </Switch>
         </Router>
