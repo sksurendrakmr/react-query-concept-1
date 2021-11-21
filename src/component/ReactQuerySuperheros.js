@@ -35,7 +35,15 @@ const ReactQuerySuperheros = () => {
   const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
     "super-heros",
     fetchSuperheros,
-    { onSuccess: onSuccess, onError: onError }
+    {
+      onSuccess: onSuccess,
+      onError: onError,
+      select: (data) => {
+        //What it does is change the destructured data to an array of superHero names.
+        const superHeroNames = data.data.map((hero) => hero.name);
+        return superHeroNames;
+      },
+    }
   );
 
   if (isLoading || isFetching) {
@@ -59,10 +67,10 @@ const ReactQuerySuperheros = () => {
         React Query Superheros
       </Typography>
       <Button onClick={refetch}>Fetch Superheros</Button>
-      {data?.data.map((hero) => {
+      {data.map((heroName) => {
         return (
-          <Typography key={hero.id} variant='body1'>
-            {hero.name}
+          <Typography key={heroName} variant='body1'>
+            {heroName}
           </Typography>
         );
       })}

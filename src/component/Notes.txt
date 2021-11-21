@@ -240,3 +240,15 @@ For this, there are two steps that we need to implement :-
 Summary
 Thus, react query allow us to do side effects based on the actual response for that 
 individual query.
+
+Lecture-12_Data Transformation
+In most scenarios, we need to transform data into certain format that we are getting from server that 
+the frontend component can consume.
+
+To help with such scenarios, react query provides a select configuration option
+which we can specify in the useQuery hook.
+
+⏭ Select is a function which automatically receives the api data as an argument. 
+(data in our case is basically the response)
+
+Data tranformation also includes data filtering.
