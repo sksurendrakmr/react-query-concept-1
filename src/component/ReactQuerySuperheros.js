@@ -34,6 +34,19 @@ import { Link } from "react-router-dom";
  * How do we call this hook and post data from our this component??
  * 1) Import and invoke custom hook.
  */
+
+/**
+ * Lecture - 22
+ * Steps
+ * 1) Get hold of the queryClient instance.
+ * 2) We need to get hold of success callback on the useMutation hook.
+ *    For this, we pass an object as an argument in useMutation hook.
+ *    This object has a property called onSuccess which is an function.
+ *    This function is executed as soon as the mutation succeeds.
+ *
+ *    So within this function, we want to invalidate the super-hero query.
+ *    we invalidate the query key using queryClient instance.
+ */
 const fetchSuperheros = () => {
   return axios.get("http://localhost:4000/superheros");
 };

@@ -365,3 +365,16 @@ From this lecture, we focus on the data posting aspect i.e. sending data
 from our application to backend.
 
 In this lecture, we will learn how to perform a basic post request.
+
+
+Lecture - 22
+After post the hero, we have to manually refetch the superhero list 
+ by clicking the fetchHero button.
+
+ This is because as soon as we add a new hero, the superhero query data 
+ is out of date.
+ So it would be nice if we could tell react query to automatically 
+ refetch the super-hero query as soon as the mutation succeeds.
+
+ React query makes it really simple to achieve that.
+ The feature is called queryInvalidation
