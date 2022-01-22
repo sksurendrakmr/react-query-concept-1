@@ -405,3 +405,22 @@ After post the hero, we have to manually refetch the superhero list
     The 1st argument is the queryKey (which query we want to update, in our case 'super-heros')
      and 2nd argument is a function.This function automatically receives the old query data as an argument.
      oldQueryData here refers to what is present in the query cache.
+
+
+     Lecture - 24
+     Optimistic updates with react query.
+     Optimistic updates as the name indicates imply updating 
+     the state before performing mutation under the assumption that 
+     nothing can go wrong.
+
+     It is typically done to give an impression that our app is blazing fast.
+
+     When dealing with Optimistic updates though we do have to cater two scenarios
+     where the mutation can in fact error out.
+     Managing optimistic updates is typically not so straightforward.
+
+     React query on the other hand does simplify it to a good extent. 
+
+     steps
+     1) comment out the onSuccess callback as that is not needed for optimistic updates.
+     2) Instead we need three other callbacks - onMutate, onError, onSettled

@@ -80,7 +80,7 @@ const ReactQuerySuperheros = () => {
     const hero = { name, alterEgo };
     addHeroMutate(hero);
   };
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return (
       <Typography variant='h2' align='center'>
         Loading...
