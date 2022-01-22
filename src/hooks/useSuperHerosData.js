@@ -37,14 +37,11 @@ export const useAddSuperHeroData = () => {
    */
   const queryClient = useQueryClient();
   return useMutation(addSuperHero, {
-    onSuccess: () => {
-      /**
-       * By invalidating the query, react query will refetch the superheros query
-       *
-       * When mutation succeded, a background refetch was initiated which resulted
-       * in the UI displaying the newly added hero.
-       */
-      queryClient.invalidateQueries("super-heros");
+    onSuccess: (data) => {
+      queryClient.setQueryData("super-heros", (oldQueryData) => {
+        //from this function, we need to return the new value for the query cache pertaining to superheros
+        return { ...oldQueryData, data: [...oldQueryData.data, data.data] };
+      });
     },
   });
 };

@@ -24,6 +24,21 @@
       "name": "Shazam ",
       "alterEgo": "Billy Batson",
       "id": 5
+    },
+    {
+      "name": "catwomen",
+      "alterEgo": "selina",
+      "id": 6
+    },
+    {
+      "name": "iron man",
+      "alterEgo": "tony stark",
+      "id": 7
+    },
+    {
+      "name": "capitan america",
+      "alterEgo": "cris evan",
+      "id": 8
     }
   ],
   "friends": [

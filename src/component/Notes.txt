@@ -378,3 +378,30 @@ After post the hero, we have to manually refetch the superhero list
 
  React query makes it really simple to achieve that.
  The feature is called queryInvalidation
+
+ Lecture - 23
+ If from the backend, in the response of post request, we have the new
+ hero object being returned.
+
+ It is pretty common for the new object to be automatically returned in 
+ the response of mutation. So instead of refetching a query for this 
+ item and wasting a network call for data that we already have, we can 
+ take advantage of the object returned by the mutation function and 
+ immediately update the existing query with the new data.
+
+ In other words, we can use addSuperhero mutation response to update 
+ the  superhero query data thereby saving an additional network request.
+
+ steps
+ 1) Comment out the query invalidation line as we don't want the additional
+    network request.
+
+ 2) we now make use of the data returned from mutation. so onSuccess now 
+    receives data as a parameter. In our case, data refers to the entire 
+    reponse for the post request.
+
+ 3) On the queryClient instance, we call a method called setQueryData.
+    This function is used to update the query cache.
+    The 1st argument is the queryKey (which query we want to update, in our case 'super-heros')
+     and 2nd argument is a function.This function automatically receives the old query data as an argument.
+     oldQueryData here refers to what is present in the query cache.
