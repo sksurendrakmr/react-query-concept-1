@@ -358,3 +358,10 @@ Infinite queries
 
 In our example, we are going to work with load more button rather then
 loading more when the user scrolls to the end of the screen. 
+
+
+Lecture - 21
+From this lecture, we focus on the data posting aspect i.e. sending data 
+from our application to backend.
+
+In this lecture, we will learn how to perform a basic post request.

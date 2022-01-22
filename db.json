@@ -14,12 +14,26 @@
       "id": 3,
       "name": "Wonder Woman",
       "alterEgo": "Princess Diana"
+    },
+    {
+      "name": "The Flash",
+      "alterEgo": "Barry Allen",
+      "id": 4
     }
   ],
   "friends": [
-    { "id": 1, "name": "Chandler Bing" },
-    { "id": 2, "name": "Joey Tribbiani" },
-    { "id": 3, "name": "Rachel Green" }
+    {
+      "id": 1,
+      "name": "Chandler Bing"
+    },
+    {
+      "id": 2,
+      "name": "Joey Tribbiani"
+    },
+    {
+      "id": 3,
+      "name": "Rachel Green"
+    }
   ],
   "users": [
     {
@@ -30,7 +44,11 @@
   "channels": [
     {
       "id": "channel1",
-      "course": ["a", "b", "c"]
+      "course": [
+        "a",
+        "b",
+        "c"
+      ]
     }
   ],
   "colors": [
