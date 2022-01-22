@@ -288,4 +288,55 @@ Lecture_15 - Parallel queries
 Sometimes a single component needs to call multiple apis to fetch the neccessary data.
 With react query it is as simple as calling use query twice.
 
-Lecture_16 - Dynamic Parallel Queries
+Lecture_18 - Initial Query Data 
+This feature improves the data viewing experience 
+for a user thereby is simething we should consider 
+for our application and i.e. providing initial 
+query data.
+
+When we apply throttle of slow 3G and 
+navigate to RQ superHero page then we see the 
+loading text and the list of heros.
+
+Now when we click on one of the item in list to
+navigate to superohero details page, we see the 
+loading text again and then the hero details.
+
+Here is a question we can ask ourselves..
+We have already fetched the hero data in the list 
+component itself. Can we not use that data in the 
+details page??
+
+The answer is yes, we can do that but we have to 
+keep in mind that the listing page may not contain
+all the data we display in the details page.
+
+So another api to fetch all the details cannot be ruled out.
+
+What we can do however is to use listing data as the 
+initial data to the details query.
+What that allows is for react query to not set a loading 
+state to the details query.
+Only a background refectch is initiated and once the details are 
+retrieved they will overwrite any inital data we might have set.
+
+Thus the entire loading state of the component in superhero
+details page can be eliminated and the data that is already 
+present in the query cache from the previous query will be 
+used to render partial data to the user.
+
+
+Steps 
+1) we need access to the queryClient that we have set at the top level
+   using the provider component.
+
+   For that react query provides another hook.
+
+2) Within the custom query hook, we call useQueryClient to get hold of 
+   client instance.
+
+   QueryClient instance has the access to the query cache which we can now 
+   access to set the initial data.
+
+3) We specify the third argument to the useQuery which is an object.
+   The property is called initialData and this is a function. 
