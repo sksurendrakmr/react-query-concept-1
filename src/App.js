@@ -35,6 +35,9 @@ function App() {
               <DynamicParallelPage heroIds={[1, 3]} />
             </Route>
             <Route path='/rq/:heroId' component={RQSuperHeroPage} />
+            <Route path='/rq-dependent'>
+              <DependentQueriesPage email='sk@example.com' />
+            </Route>
           </Switch>
         </Router>
         <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />

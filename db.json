@@ -20,5 +20,17 @@
     { "id": 1, "name": "Chandler Bing" },
     { "id": 2, "name": "Joey Tribbiani" },
     { "id": 3, "name": "Rachel Green" }
+  ],
+  "users": [
+    {
+      "id": "sk@example.com",
+      "channelId": "channel1"
+    }
+  ],
+  "channels": [
+    {
+      "id": "channel1",
+      "course": ["a", "b", "c"]
+    }
   ]
 }
