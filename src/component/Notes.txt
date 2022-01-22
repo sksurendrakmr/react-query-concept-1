@@ -352,3 +352,9 @@ localhost:4000/colors?_limit=2&_page=1
 
 We need to use these query parameters to implement pagination in our 
 component.
+
+Lecture - 20
+Infinite queries
+
+In our example, we are going to work with load more button rather then
+loading more when the user scrolls to the end of the screen. 

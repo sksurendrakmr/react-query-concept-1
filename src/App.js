@@ -10,6 +10,7 @@ import { ParallelQueriesPage } from "./component/ParallelQueries.page";
 import { DynamicParallelPage } from "./component/DynamicParallel.page";
 import { DependentQueriesPage } from "./component/DependentQueries.page";
 import { PaginatedQueries } from "./component/PaginatedQueries.page";
+import { InfiniteQueries } from "./component/InfiniteQueries.page";
 function App() {
   // const path = window.location.pathname;
   // const activeIndex = () => {
@@ -42,6 +43,9 @@ function App() {
             </Route>
             <Route path='/rq-paginated'>
               <PaginatedQueries />
+            </Route>
+            <Route path='/rq-infinite'>
+              <InfiniteQueries />
             </Route>
           </Switch>
         </Router>
