@@ -8,6 +8,7 @@ import ReactQuerySuperheros from "./component/ReactQuerySuperheros";
 import { RQSuperHeroPage } from "./component/RQSuperHero.page";
 import { ParallelQueriesPage } from "./component/ParallelQueries.page";
 import { DynamicParallelPage } from "./component/DynamicParallel.page";
+import { DependentQueriesPage } from "./component/DependentQueries.page";
 function App() {
   // const path = window.location.pathname;
   // const activeIndex = () => {
