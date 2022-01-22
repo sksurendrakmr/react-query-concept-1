@@ -340,3 +340,15 @@ Steps
 
 3) We specify the third argument to the useQuery which is an object.
    The property is called initialData and this is a function. 
+
+
+Lecture - 19
+Pagination
+
+Goal is to paginate list of eight colors displaying only two per page.
+
+JSON Server supports pagination under the hood
+localhost:4000/colors?_limit=2&_page=1
+
+We need to use these query parameters to implement pagination in our 
+component.

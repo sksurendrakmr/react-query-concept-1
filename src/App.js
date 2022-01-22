@@ -9,6 +9,7 @@ import { RQSuperHeroPage } from "./component/RQSuperHero.page";
 import { ParallelQueriesPage } from "./component/ParallelQueries.page";
 import { DynamicParallelPage } from "./component/DynamicParallel.page";
 import { DependentQueriesPage } from "./component/DependentQueries.page";
+import { PaginatedQueries } from "./component/PaginatedQueries.page";
 function App() {
   // const path = window.location.pathname;
   // const activeIndex = () => {
@@ -38,6 +39,9 @@ function App() {
             <Route path='/rq/:heroId' component={RQSuperHeroPage} />
             <Route path='/rq-dependent'>
               <DependentQueriesPage email='sk@example.com' />
+            </Route>
+            <Route path='/rq-paginated'>
+              <PaginatedQueries />
             </Route>
           </Switch>
         </Router>
